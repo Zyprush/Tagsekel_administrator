@@ -1,0 +1,54 @@
+﻿@page
+@model Tagsekel_administrator.Pages.Adminpages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>add new subsriber</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Class.Name" class="control-label"></label>
+                <input asp-for="Class.Name" class="form-control" />
+                <span asp-validation-for="Class.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.Email" class="control-label"></label>
+                <input asp-for="Class.Email" class="form-control" />
+                <span asp-validation-for="Class.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.Subscription" class="control-label"></label>
+                <input asp-for="Class.Subscription" class="form-control" />
+                <span asp-validation-for="Class.Subscription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.Assigned" class="control-label"></label>
+                <input asp-for="Class.Assigned" class="form-control" />
+                <span asp-validation-for="Class.Assigned" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.Expired" class="control-label"></label>
+                <input asp-for="Class.Expired" class="form-control" />
+                <span asp-validation-for="Class.Expired" class="text-danger"></span>
+            </div>
+             <hr />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="Index"><input type="button" class="btn btn-primary btn-sm" value="Back to List"/></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

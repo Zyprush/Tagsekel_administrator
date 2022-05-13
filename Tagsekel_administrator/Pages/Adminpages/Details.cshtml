@@ -1,0 +1,49 @@
+﻿@page
+@model Tagsekel_administrator.Pages.Adminpages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.Subscription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Subscription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.Assigned)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Assigned)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.Expired)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Expired)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Class.ID"><input type="button" class="btn btn-primary" value="Edit"/></a> |
+    <a asp-page="Index"><input type="button" class="btn btn-primary btn-sm" value="Back to List"/></a>
+</div>

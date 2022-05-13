@@ -1,0 +1,63 @@
+﻿@page
+@model Tagsekel_administrator.Pages.Adminpages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Subsriber Profiles</h1>
+
+<form>
+    <p>
+        Search: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<a href="/Adminpages/Create"><input type="button" class="btn btn-primary" value="Add Subscribers"/></a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Subscription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Assigned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Expired)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Class) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subscription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assigned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expired)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID"><input type="button" class="btn btn-primary" value="Edit"/></a> 
+                <a asp-page="./Details" asp-route-id="@item.ID"><input type="button" class="btn btn-info" value="Details"/></a> 
+                <a asp-page="./Delete" asp-route-id="@item.ID"><input type="button" class="btn btn-danger" value="Delete"/></a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
